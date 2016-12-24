@@ -2,9 +2,11 @@
 TMCNメンバーを3Dスキャンして、Perfumeのモーションを当ててみました。
 HoloLensで見るとダンスを様々な角度から見ることができます。
 
+[![](Images\view.png)](https://www.youtube.com/watch?v=XXTVgkJLSJo&feature=youtu.be)
+
 ## ビルド
 UnityからUWPへのビルドの際は「Unity C# Projects」にチェックを入れてください。
-[](Images\build.png)
+![](Images\build.png)
 
 ## ライセンス
 
