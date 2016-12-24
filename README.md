@@ -1,0 +1,2 @@
+# TmcnPerfume
+TMCNメンバーを3Dスキャンして、Perfumeのモーションを当ててみました
