@@ -13,11 +13,16 @@ public class Motion : MonoBehaviour {
 #endif
 
     public GameObject aachan;
-    public GameObject kashiyuka;
-    public GameObject nocchi;
+    public RuntimeAnimatorController aachanMotion;
 
-	// Use this for initialization
-	void Start () {
+    public GameObject kashiyuka;
+    public RuntimeAnimatorController kashiyukaMotion;
+
+    public GameObject nocchi;
+    public RuntimeAnimatorController nocchiMotion;
+
+    // Use this for initialization
+    void Start () {
 #if UNITY_UWP
         recogniszer = new GestureRecognizer();
         recogniszer.SetRecognizableGestures(GestureSettings.Tap);
@@ -44,8 +49,13 @@ public class Motion : MonoBehaviour {
 
     private void StartDansing()
     {
+        aachan.GetComponent<Animator>().runtimeAnimatorController = aachanMotion;
         aachan.GetComponent<Animator>().Play("animation");
+
+        kashiyuka.GetComponent<Animator>().runtimeAnimatorController = kashiyukaMotion;
         kashiyuka.GetComponent<Animator>().Play("animation");
+
+        nocchi.GetComponent<Animator>().runtimeAnimatorController = nocchiMotion;
         nocchi.GetComponent<Animator>().Play("animation");
 
         GetComponent<AudioSource>().Play();
