@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-#if UNITY_UWP
-using UnityEngine.VR.WSA.Input;
+#if WINDOWS_UWP
+using UnityEngine.XR.WSA.Input;
 #endif
 
 public class Motion : MonoBehaviour {
 
-#if UNITY_UWP
+#if WINDOWS_UWP
     GestureRecognizer recogniszer;
 #endif
 
@@ -18,7 +18,7 @@ public class Motion : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-#if UNITY_UWP
+#if WINDOWS_UWP
         recogniszer = new GestureRecognizer();
         recogniszer.SetRecognizableGestures(GestureSettings.Tap);
 
@@ -27,7 +27,7 @@ public class Motion : MonoBehaviour {
 #endif
     }
 
-#if UNITY_UWP
+#if WINDOWS_UWP
     private void Recogniszer_TappedEvent(InteractionSourceKind source, int tapCount, Ray headRay)
     {
         StartDansing();
